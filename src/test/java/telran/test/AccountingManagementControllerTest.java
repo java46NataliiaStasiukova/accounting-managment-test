@@ -5,7 +5,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -34,7 +33,7 @@ MockMvc mockMvc;
 		Account account = new Account();
 		account.username = "test@gmail.com";
 		account.password = "12345.com";
-		account.role = "USER";
+		account.roles = new String[]{"USER"};
 		String accountJSON = mapper.writeValueAsString(account);
 		mockMvc.perform(post("http://localhost/accounts")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -50,7 +49,7 @@ MockMvc mockMvc;
 		Account account = new Account();
 		account.username = "test";
 		account.password = "123";
-		account.role = "USER";
+		account.roles = new String[]{"USER"};
 		String accountJSON = mapper.writeValueAsString(account);
 		mockMvc.perform(post("http://localhost/accounts")
 				.contentType(MediaType.APPLICATION_JSON)

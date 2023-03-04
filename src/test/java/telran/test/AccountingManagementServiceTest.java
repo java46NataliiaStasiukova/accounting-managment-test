@@ -43,7 +43,7 @@ AccountingService accountingService;
 		Account account = new Account();
 		account.username = "test@gmail.com";
 		account.password = "12345.com";
-		account.role = "TEST";
+		account.roles = new String[]{"TEST"};
 		assertTrue(accountingService.addAccount(account));
 	}
 	@Test
@@ -52,7 +52,7 @@ AccountingService accountingService;
 		Account account = new Account();
 		account.username = "test@gmail.com";
 		account.password = "12345678";
-		account.role = "TEST";
+		account.roles = new String[]{"TEST"};
 		assertTrue(accountingService.updateAccount(account));
 	}
 

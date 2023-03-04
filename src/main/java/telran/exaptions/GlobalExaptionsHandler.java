@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 
+
 @ControllerAdvice
 public class GlobalExaptionsHandler {
 static Logger LOG = LoggerFactory.getLogger(GlobalExaptionsHandler.class);
